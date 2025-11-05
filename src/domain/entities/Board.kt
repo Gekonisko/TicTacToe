@@ -1,5 +1,7 @@
 package domain.entities
 
+import domain.valueObjects.Move
+
 interface Board {
     val size: Int
     fun makeMove(move: Move, playerSymbol: Char): Boolean

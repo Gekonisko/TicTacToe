@@ -1,6 +1,7 @@
 package infrastructure.players
 
 import domain.entities.*
+import domain.valueObjects.Move
 
 class RandomPlayer(override val name: String, override val symbol: Char) : Player {
 

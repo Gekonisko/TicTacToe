@@ -1,10 +1,7 @@
-package infrastructure.boards
+package domain.entities
 
-import domain.entities.Board
-import domain.entities.Move
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import domain.valueObjects.Move
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 abstract class BoardContractTest {
@@ -17,8 +14,10 @@ abstract class BoardContractTest {
 
         for (r in 0 until board.size)
             for (c in 0 until board.size)
-                assertEquals(' ', board.getGrid()[r][c],
-                    "Expected empty cell at ($r, $c)")
+                Assertions.assertEquals(
+                    ' ', board.getGrid()[r][c],
+                    "Expected empty cell at ($r, $c)"
+                )
     }
 
     @Test
@@ -26,8 +25,8 @@ abstract class BoardContractTest {
         val board = createBoard()
         val success = board.makeMove(Move(0, 0), 'X')
 
-        assertTrue(success, "Expected move to succeed on empty cell")
-        assertEquals('X', board.getGrid()[0][0])
+        Assertions.assertTrue(success, "Expected move to succeed on empty cell")
+        Assertions.assertEquals('X', board.getGrid()[0][0])
     }
 
     @Test
@@ -37,14 +36,14 @@ abstract class BoardContractTest {
         board.makeMove(Move(0, 0), 'X')
         val success = board.makeMove(Move(0, 0), 'O')
 
-        assertFalse(success, "Expected move to fail on occupied cell")
-        assertEquals('X', board.getGrid()[0][0])
+        Assertions.assertFalse(success, "Expected move to fail on occupied cell")
+        Assertions.assertEquals('X', board.getGrid()[0][0])
     }
 
     @Test
     fun `board reports not full when any empty cell exists`() {
         val board = createBoard()
-        assertFalse(board.isFull(), "Expected board not to be full initially")
+        Assertions.assertFalse(board.isFull(), "Expected board not to be full initially")
     }
 
     @Test
@@ -54,6 +53,6 @@ abstract class BoardContractTest {
             for (c in 0 until board.size)
                 board.makeMove(Move(r, c), if ((r + c) % 2 == 0) 'X' else 'O')
 
-        assertTrue(board.isFull(), "Expected board to be full after all moves")
+        Assertions.assertTrue(board.isFull(), "Expected board to be full after all moves")
     }
 }

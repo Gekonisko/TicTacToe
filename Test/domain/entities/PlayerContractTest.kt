@@ -1,12 +1,7 @@
-package infrastructure.players
+package domain.entities
 
-import domain.entities.Board
-import domain.entities.Move
-import domain.entities.Player
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertNotEquals
-import org.junit.jupiter.api.Assertions.assertNotSame
-import org.junit.jupiter.api.Assertions.assertTrue
+import domain.valueObjects.Move
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 abstract class PlayerContractTest {
@@ -16,14 +11,14 @@ abstract class PlayerContractTest {
     @Test
     fun `player should expose non-empty name`() {
         val player = createPlayer()
-        assertTrue(player.name.isNotBlank(), "Player name must not be blank")
+        Assertions.assertTrue(player.name.isNotBlank(), "Player name must not be blank")
     }
 
     @Test
     fun `player should expose correct symbol`() {
         val symbol = 'O'
         val player = createPlayer(symbol)
-        assertEquals(symbol, player.symbol)
+        Assertions.assertEquals(symbol, player.symbol)
     }
 
     @Test
@@ -33,7 +28,7 @@ abstract class PlayerContractTest {
 
         val move = player.getNextMove(board)
 
-        assertTrue(
+        Assertions.assertTrue(
             move.row in 0 until board.size && move.col in 0 until board.size,
             "Player produced move out of board range: $move"
         )
@@ -48,7 +43,7 @@ abstract class PlayerContractTest {
 
         val move = player.getNextMove(board)
 
-        assertNotEquals(
+        Assertions.assertNotEquals(
             Move(1, 1), move,
             "Player chose an already occupied cell: $move"
         )
@@ -62,6 +57,6 @@ abstract class PlayerContractTest {
         val first = player.getNextMove(board)
         val second = player.getNextMove(board)
 
-        assertNotSame(first, second, "Player returned the same Move instance twice")
+        Assertions.assertNotSame(first, second, "Player returned the same Move instance twice")
     }
 }

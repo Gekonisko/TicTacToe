@@ -1,9 +1,7 @@
-package infrastructure.showBoard
+package domain.entities
 
-import domain.entities.Board
-import domain.entities.Move
-import domain.entities.ShowBoard
-import org.junit.jupiter.api.Assertions.assertTrue
+import domain.valueObjects.Move
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 abstract class ShowBoardContractTest {
@@ -17,7 +15,7 @@ abstract class ShowBoardContractTest {
         val renderer = createShowBoard()
 
         val output = renderer.show(board)
-        assertTrue(output.isNotBlank(), "ShowBoard must return a non-empty string representation")
+        Assertions.assertTrue(output.isNotBlank(), "ShowBoard must return a non-empty string representation")
     }
 
     @Test
@@ -29,8 +27,8 @@ abstract class ShowBoardContractTest {
         val renderer = createShowBoard()
         val output = renderer.show(board)
 
-        assertTrue(output.contains("X"), "Rendered output should include X")
-        assertTrue(output.contains("O"), "Rendered output should include O")
+        Assertions.assertTrue(output.contains("X"), "Rendered output should include X")
+        Assertions.assertTrue(output.contains("O"), "Rendered output should include O")
     }
 
     @Test
@@ -39,7 +37,7 @@ abstract class ShowBoardContractTest {
         val renderer = createShowBoard()
         val output = renderer.show(board)
 
-        assertTrue(
+        Assertions.assertTrue(
             output.contains("|") || output.contains("-") || output.contains("+"),
             "Rendered output should contain visual separators like |, -, or +"
         )
@@ -53,7 +51,7 @@ abstract class ShowBoardContractTest {
         val output = renderer.show(board)
         val rows = output.lines().filter { it.isNotBlank() }
 
-        assertTrue(
+        Assertions.assertTrue(
             rows.size >= board.size,
             "Rendered output should have at least ${board.size} visible rows"
         )

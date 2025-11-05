@@ -1,6 +1,7 @@
 package infrastructure.players
 
 import domain.entities.*
+import domain.valueObjects.Move
 
 class HumanPlayer(
     override val name: String,

@@ -3,8 +3,9 @@ package infrastructure.rules
 import domain.entities.Board
 import domain.entities.Player
 import domain.entities.Rules
+import domain.entities.RulesContractTest
 import infrastructure.boards.TicTacToeBoard
-import infrastructure.inputProviders.FakeInputProvider
+import fakes.FakeInputProvider
 import infrastructure.players.HumanPlayer
 
 class TicTacToeRulesContractTest : RulesContractTest() {

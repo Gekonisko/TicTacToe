@@ -2,6 +2,7 @@ package infrastructure.players
 
 import domain.entities.Board
 import domain.entities.Player
+import domain.entities.PlayerContractTest
 import infrastructure.boards.TicTacToeBoard
 
 class RandomPlayerContractTest : PlayerContractTest() {

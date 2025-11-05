@@ -1,12 +1,8 @@
-package infrastructure.rules
+package domain.entities
 
-import domain.entities.Board
-import domain.entities.GameState
-import domain.entities.Move
-import domain.entities.Player
-import domain.entities.Rules
-import org.junit.jupiter.api.Assertions.assertArrayEquals
-import org.junit.jupiter.api.Assertions.assertEquals
+import domain.valueObjects.GameState
+import domain.valueObjects.Move
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 abstract class RulesContractTest {
@@ -22,7 +18,7 @@ abstract class RulesContractTest {
 
         val state = rules.evaluate(board, player)
 
-        assertEquals(GameState.IN_PROGRESS, state)
+        Assertions.assertEquals(GameState.IN_PROGRESS, state)
     }
 
     @Test
@@ -37,7 +33,7 @@ abstract class RulesContractTest {
 
         val state = rules.evaluate(board, player)
 
-        assertEquals(GameState.WIN, state, "Rules should detect a win for player X")
+        Assertions.assertEquals(GameState.WIN, state, "Rules should detect a win for player X")
     }
 
     @Test
@@ -57,7 +53,7 @@ abstract class RulesContractTest {
 
         val state = rules.evaluate(board, player)
 
-        assertEquals(GameState.DRAW, state)
+        Assertions.assertEquals(GameState.DRAW, state)
     }
 
     @Test
@@ -72,7 +68,7 @@ abstract class RulesContractTest {
         rules.evaluate(board, player)
 
         for (r in board.getGrid().indices) {
-            assertArrayEquals(snapshot[r], board.getGrid()[r])
+            Assertions.assertArrayEquals(snapshot[r], board.getGrid()[r])
         }
     }
 }

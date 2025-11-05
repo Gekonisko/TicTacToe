@@ -1,4 +1,4 @@
-package domain.entities
+package domain.valueObjects
 
 enum class GameState {
     IN_PROGRESS,

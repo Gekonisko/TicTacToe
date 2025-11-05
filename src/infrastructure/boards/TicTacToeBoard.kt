@@ -1,6 +1,7 @@
 package infrastructure.boards
 
 import domain.entities.*
+import domain.valueObjects.Move
 
 class TicTacToeBoard : Board {
     override val size = 3

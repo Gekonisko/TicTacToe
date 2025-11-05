@@ -1,4 +1,4 @@
-package infrastructure.inputProviders
+package fakes
 
 import domain.entities.InputProvider
 

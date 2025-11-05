@@ -3,7 +3,7 @@ package infrastructure.showBoard
 import domain.entities.Board
 import domain.entities.ShowBoard
 
-class ConsoleShowBoard : ShowBoard {
+class ConsoleShowBoard(private val autoPrint: Boolean = true) : ShowBoard {
 
     override fun show(board: Board): String {
         val grid = board.getGrid()
@@ -17,6 +17,9 @@ class ConsoleShowBoard : ShowBoard {
             if (i < size - 1) builder.appendLine("---+---+---")
         }
         builder.appendLine()
+
+        val output = builder.toString().trimEnd()
+        if (autoPrint) println(output)
 
         return builder.toString().trimEnd()
     }

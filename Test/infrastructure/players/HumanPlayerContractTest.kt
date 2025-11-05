@@ -2,8 +2,9 @@ package infrastructure.players
 
 import domain.entities.Board
 import domain.entities.Player
+import domain.entities.PlayerContractTest
 import infrastructure.boards.TicTacToeBoard
-import infrastructure.inputProviders.FakeInputProvider
+import fakes.FakeInputProvider
 
 class HumanPlayerContractTest : PlayerContractTest() {
 

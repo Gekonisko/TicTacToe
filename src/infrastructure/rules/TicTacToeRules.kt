@@ -1,7 +1,7 @@
 package infrastructure.rules
 
 import domain.entities.Board
-import domain.entities.GameState
+import domain.valueObjects.GameState
 import domain.entities.Player
 import domain.entities.Rules
 
