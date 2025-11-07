@@ -5,6 +5,7 @@ import domain.entities.Player
 import domain.entities.PlayerContractTest
 import infrastructure.boards.TicTacToeBoard
 import fakes.FakeInputProvider
+import fakes.FakeOutputProvider
 
 class HumanPlayerContractTest : PlayerContractTest() {
 
@@ -12,7 +13,8 @@ class HumanPlayerContractTest : PlayerContractTest() {
         val fakeInputs = listOf("1", "1",
                                 "2", "2")
         val fakeInputProvider = FakeInputProvider(fakeInputs)
-        return HumanPlayer(name, symbol, fakeInputProvider)
+        val fakeOutputProvider = FakeOutputProvider()
+        return HumanPlayer(name, symbol, fakeInputProvider, fakeOutputProvider)
     }
 
     override fun createBoard(): Board = TicTacToeBoard()

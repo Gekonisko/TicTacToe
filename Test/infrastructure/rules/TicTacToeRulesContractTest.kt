@@ -6,6 +6,7 @@ import domain.entities.Rules
 import domain.entities.RulesContractTest
 import infrastructure.boards.TicTacToeBoard
 import fakes.FakeInputProvider
+import fakes.FakeOutputProvider
 import infrastructure.players.HumanPlayer
 
 class TicTacToeRulesContractTest : RulesContractTest() {
@@ -17,6 +18,7 @@ class TicTacToeRulesContractTest : RulesContractTest() {
         val fakeInputs = listOf("1", "1",
             "2", "2")
         val fakeInputProvider = FakeInputProvider(fakeInputs)
-        return HumanPlayer(name, symbol, fakeInputProvider)
+        val fakeOutputProvider = FakeOutputProvider()
+        return HumanPlayer(name, symbol, fakeInputProvider, fakeOutputProvider)
     }
 }
