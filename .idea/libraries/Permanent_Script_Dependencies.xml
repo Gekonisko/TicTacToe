@@ -12,10 +12,12 @@
       <root url="file://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar" />
       <root url="file://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar" />
       <root url="file://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar" />
+      <root url="file://$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2025.2/kotlinNotebook/tictactoe.1a60f9c2/kernels/0.16.0-717/kotlin-jupyter-ide-classpath-shadowed-jar/kotlin-jupyter-ide-classpath-shadowed-0.16.0-717.jar" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="file://$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2025.2/kotlinNotebook/tictactoe.1a60f9c2/kernels/0.13.0-600-1/kotlin-jupyter-script-classpath-shadowed-sources-jar/kotlin-jupyter-script-classpath-shadowed-0.13.0-600-1-sources.jar" />
+      <root url="file://$USER_HOME$/AppData/Local/JetBrains/IntelliJIdea2025.2/kotlinNotebook/tictactoe.1a60f9c2/kernels/0.16.0-717/kotlin-jupyter-script-classpath-shadowed-sources-jar/kotlin-jupyter-script-classpath-shadowed-0.16.0-717-sources.jar" />
     </SOURCES>
   </library>
 </component>
